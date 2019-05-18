@@ -26,17 +26,41 @@
             <h3 id="result"> </h3>
         </div>
     </div>
+    
     <script>
 
        var userScore = 0;
        var cpuScore = 0;
 
        var userPick = "sasso";
-       var cpuPick = "sasso";
+       var cpuPick = "carta";
 
        if(userPick == cpuPick) {
-           console.log ("Hai pareggiato");
-       } 
+         console.log ("Hai pareggiato");
+            } else {
+                if (userPick == "sasso"){
+                    if (cpuPick == "forbice"){
+                        console.log ("Hai vinto");
+                    }else {
+                        console.log ("Hai perso");
+                    }
+                }
+                  if (userPick == "carta"){
+                    if (cpuPick == "sasso"){
+                        console.log ("Hai vinto");
+                    }else {
+                        console.log ("Hai perso");
+                    }
+                }
+                  if (userPick == "forbice"){
+                    if (cpuPick == "carta"){
+                        console.log ("Hai vinto");
+                    }else {
+                        console.log ("Hai perso");
+                    }
+                }
+            }
     </script>
+
 </body>
 </html>
