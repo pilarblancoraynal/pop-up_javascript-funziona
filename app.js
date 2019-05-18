@@ -20,6 +20,7 @@ function onUserPick(){
         generateCpuPick();
         console.log("la scelta del pc è:", cpuPick);
         console.log(checkWhoWon());
+        document.getElementById("result").innerHTML = cpuPick;
 }
 
 function generateCpuPick(){
@@ -27,30 +28,30 @@ function generateCpuPick(){
 }
 
 function checkWhoWon(){
-         if(userPick == cpuPick) {
-         console.log ("Hai pareggiato");
+        if(userPick == cpuPick) {
+         return "Hai pareggiato";
              } else {
-                 if (userPick == "sasso"){
-                     if (cpuPick == "forbice"){
+            if (userPick == "sasso"){
+               if (cpuPick == "forbice"){
+                 return "Hai vinto";
+                  }else {
+                    return "Hai perso";
+                  }
+                } 
+            if (userPick == "carta"){
+                if (cpuPick == "sasso"){
                          return "Hai vinto";
-                     }else {
-                         return "Hai perso";
-                     }
-                 } else if (userPick == "carta"){
-                     if (cpuPick == "sasso"){
-                         return "Hai vinto";
-                     }else {
-                         return "Hai perso";
-                     }
+                }else {
+                  return "Hai perso";
+                }
                  
-                 }else if (userPick == "forbice"){
-                     if (cpuPick == "carta"){
-                         return "Hai vinto";
-                     }else {
-                         return "Hai perso";
-                     }
                  }
-             }
-    document.getElementById("result").innerHTML = cpuPick;
-
+            if (userPick == "forbice"){
+                if (cpuPick == "carta"){
+                         return "Hai vinto";
+                }else {
+                 return "Hai perso";
+            }
+        }
+     }
 }
