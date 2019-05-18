@@ -39,9 +39,12 @@
 
        var possibleUserPicks = document.getElementsByClassName("user-choice");
 
-       document.getElementsByClassName("user-choice")[0].addEventListener('click', )
-       document.getElementsByClassName("user-choice")[1].addEventListener('click', )
-       document.getElementsByClassName("user-choice")[2].addEventListener('click', )
+       for(var i = 0; i < possibleUserPicks.lenght; i++){
+           possibleUserPicks[i].addEventListener('click', function(){
+               userPick = this.database.name;
+           });
+       }
+
 
        function generateCpuPick(){
            cpuPick = allOptions[Math.floor(Math.random()* allOptions.length)];
