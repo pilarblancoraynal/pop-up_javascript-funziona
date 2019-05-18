@@ -34,7 +34,11 @@ function onUserPick(){
         generateCpuPick();
         console.log("la scelta del pc è:", cpuPick.name);
         console.log(checkWhoWon());
-        document.getElementById("result").innerHTML = cpuPick.name;
+
+        var cpuPickImage = "<img src='" + cpuPick.image +"' />";
+        var cpuPickText = "<h3>" + cpuPick.name +"</h3>";
+
+        document.getElementById("computer-choice").innerHTML = cpuPickImage + cpuPickText;
 }
 
 function generateCpuPick(){
