@@ -1,8 +1,8 @@
 var userScore = 0;
 var cpuScore = 0;
 
-var userPick = "sasso";
-var cpuPick = "";
+var userPick;
+var cpuPick;
 
 var allOptions = ["sasso","carta","forbice"];
 
@@ -10,14 +10,14 @@ var possibleUserPicks = document.getElementsByClassName("user-choice");
 
 for(var i = 0; i < possibleUserPicks.lenght; i++){
     possibleUserPicks[i].addEventListener('click', function(){
-        userPick = this.database.name;
+        userPick = this.dataset.name;
+        console.log (userPick);
     });
 }
 
 
 function generateCpuPick(){
     cpuPick = allOptions[Math.floor(Math.random()* allOptions.length)];
-    console.log(cpuPick);
 }
 
 generateCpuPick();
