@@ -1,6 +1,7 @@
-var userScore = 0;
-var cpuScore = 0;
-
+var score = {
+    userScore: 0,
+    cpuScore: 0
+}
 var userPick;
 var cpuPick;
 
