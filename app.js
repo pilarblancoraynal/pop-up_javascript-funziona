@@ -19,7 +19,7 @@ function onUserPick(){
         console.log("la tua scelta è:", userPick);
         generateCpuPick();
         console.log("la scelta del pc è:", cpuPick);
-        checkWhoWon();
+        console.log(checkWhoWon());
 }
 
 function generateCpuPick(){
@@ -32,22 +32,22 @@ function checkWhoWon(){
              } else {
                  if (userPick == "sasso"){
                      if (cpuPick == "forbice"){
-                         console.log ("Hai vinto");
+                         return "Hai vinto";
                      }else {
-                         console.log ("Hai perso");
+                         return "Hai perso";
                      }
                  } else if (userPick == "carta"){
                      if (cpuPick == "sasso"){
-                         console.log ("Hai vinto");
+                         return "Hai vinto";
                      }else {
-                         console.log ("Hai perso");
+                         return "Hai perso";
                      }
                  
                  }else if (userPick == "forbice"){
                      if (cpuPick == "carta"){
-                         console.log ("Hai vinto");
+                         return "Hai vinto";
                      }else {
-                         console.log ("Hai perso");
+                         return "Hai perso";
                      }
                  }
              }
