@@ -2,26 +2,29 @@ var score = {
     userScore: 0,
     cpuScore: 0
 }
+
 var userPick;
 var cpuPick;
 
-var allOptions = ["sasso","carta","forbice"];
+var allOptions = ["sasso","carta","forbice"]
 
 var possibleUserPicks = document.getElementsByClassName("user-choice");
 
-for(var i = 0; i < possibleUserPicks.lenght; i++){
-    possibleUserPicks[i].addEventListener('click', function(){
-        userPick = this.dataset.name;
-        console.log (userPick);
-    });
+for (var i = 0; i < possibleUserPicks.length; i++){
+    possibleUserPicks[i].addEventListener('click', onUserPick);
 }
 
+function onUserPick(){
+        userPick = this.dataset.name;
+        console.log("la tua scelta è:", userPick);
+        generateCpuPick();
+        console.log("la scelta del pc è:", cpuPick);
+        checkWhoWon();
+}
 
 function generateCpuPick(){
-    cpuPick = allOptions[Math.floor(Math.random()* allOptions.length)];
+    cpuPick = allOptions[Math.floor(Math.random() * allOptions.length)];
 }
-
-generateCpuPick();
 
 function checkWhoWon(){
          if(userPick == cpuPick) {
@@ -48,4 +51,6 @@ function checkWhoWon(){
                      }
                  }
              }
-         }
+    document.getElementById("result").innerHTML = cpuPick;
+
+}
